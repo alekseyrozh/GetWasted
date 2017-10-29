@@ -43,6 +43,8 @@ public class ResultScreen extends Screen {
         ImageView imageView = view.findViewById(R.id.imageView3);
         imageView.setImageDrawable(new MyDrawable());
 
+        ImageView imageViewBeer = view.findViewById(R.id.imageView3);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

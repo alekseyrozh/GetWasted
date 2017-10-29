@@ -16,7 +16,9 @@ import com.example.aleksei.myapplication.screens.ScreenManager;
 import com.example.aleksei.myapplication.screens.ScreenTypes;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,11 +66,24 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public static double getTotalUnits()
-    {
+    public static double getTotalUnits() {
         double sum = 0;
-        for(Bar bar:barsBeenTo)
-            sum+=bar.totalUnits();
+        for (Bar bar : barsBeenTo)
+            sum += bar.totalUnits();
         return sum;
+    }
+
+    public static Map<Drink, Integer> getAllDrinks() {
+        Map<Drink, Integer> allDrinks = new HashMap<>();
+
+        for (Bar bar : barsBeenTo) {
+            for (Map.Entry<Drink, Integer> entry : bar.getDrinks().entrySet()) {
+                Drink drink = entry.getKey();
+                int numberOfDrinks = entry.getValue();
+                int oldCount = allDrinks.getOrDefault(drink, 0);
+                allDrinks.put(drink, oldCount + numberOfDrinks);
+            }
+        }
+        return allDrinks;
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,18 +13,36 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Congratulations! You've made it through:"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:text="Congratulations!\nYou've made it through."
         android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView2"
         app:srcCompat="@drawable/carrying" />
 
     <ListView
         android:id="@+id/listViewAllDrinks"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageView4"
+        android:layout_above="@+id/go_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-</LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/go_home"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:padding="10dp"
+        android:text="go home"
+        android:layout_alignParentBottom="true"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>
