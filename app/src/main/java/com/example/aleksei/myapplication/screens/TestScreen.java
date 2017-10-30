@@ -39,7 +39,13 @@ public class TestScreen extends Screen {
 
     int chosenIndex = -1;
 
-    String[] texts = new String[]{"a", "b", "c", "d", "e"};
+    String[] texts = new String[]{
+            "I'm on a whisky diet",
+            "Time is never wasted",
+            "I am though",
+            "I'm on a whisky diet",
+            "Time is never wasted",
+            "I am though"};
 
     List<String> testTexts = new ArrayList(Arrays.asList(texts));
 
@@ -64,7 +70,7 @@ public class TestScreen extends Screen {
                 String actualText = textViewTextToType.getText().toString();
                 if (input.trim().equals(actualText)) {
                     Toast.makeText(getActivity(), "Correct!", Toast.LENGTH_SHORT).show();
-                    MainActivity.screenManager.setScreen((AppCompatActivity)getActivity(), ScreenTypes.RESULT);
+                    MainActivity.screenManager.setScreen((AppCompatActivity) getActivity(), ScreenTypes.RESULT);
                 } else {
                     lost();
                 }
@@ -93,7 +99,7 @@ public class TestScreen extends Screen {
 
         //"Don't worry, Uber is gonna come shortly";
 
-        MainActivity.screenManager.setScreen((AppCompatActivity)getActivity(), ScreenTypes.UBER);
+        MainActivity.screenManager.setScreen((AppCompatActivity) getActivity(), ScreenTypes.UBER);
     }
 
     private void setRandomTest() {
